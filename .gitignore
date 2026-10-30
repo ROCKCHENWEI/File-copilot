@@ -1,0 +1,11 @@
+node_modules/
+main.js
+data.json
+coverage/
+dist/
+.vercel/
+.DS_Store
+
+# Understand-Anything — local pipeline scratch (see upstream README)
+.understand-anything/intermediate/
+.understand-anything/diff-overlay.json
