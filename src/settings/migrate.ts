@@ -67,7 +67,7 @@ export async function readLegacySettings(app: App): Promise<Partial<CopilotSetti
       exportMarkdownFolder: pickString(parsed.exportMarkdownFolder),
     };
   } catch (error) {
-    console.warn(`[Copilot CN Agent] 读取旧版配置失败：${legacyPath}`, error);
+    console.warn(`[File Copilot] 读取旧版配置失败：${legacyPath}`, error);
     return null;
   }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "obsidian-copilot-cn-agent",
-  "version": "0.2.2",
+  "name": "obsidian-file-copilot",
+  "version": "0.2.3",
   "private": true,
   "description": "Obsidian work-agent copilot for MiniMax, Kimi, and GLM with vault tools.",
   "main": "main.js",

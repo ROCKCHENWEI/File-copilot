@@ -30,7 +30,7 @@ function actorLabel(role: ChatMessage["role"]): string {
   }
 
   if (role === "assistant") {
-    return "Copilot CN";
+    return "File Copilot";
   }
 
   return "系统";

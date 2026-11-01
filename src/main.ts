@@ -27,7 +27,7 @@ export default class CopilotPlugin extends Plugin {
 
       if (imported) {
         await this.saveData(imported);
-        new Notice("Copilot CN Agent：已从旧版 Copilot CN 导入设置与 API Key。");
+        new Notice("File Copilot：已从旧版 Copilot CN 导入设置与 API Key。");
       }
     }
 
@@ -42,7 +42,7 @@ export default class CopilotPlugin extends Plugin {
 
     this.addCommand({
       id: "open-chat",
-      name: "打开 Copilot CN Agent 侧边栏",
+      name: "打开 File Copilot 侧边栏",
       callback: () => {
         void this.activateView();
       },
@@ -125,7 +125,7 @@ export default class CopilotPlugin extends Plugin {
 
     await plugins.disablePlugin(PLUGIN_ID);
     await plugins.enablePlugin(PLUGIN_ID);
-    new Notice("Copilot CN Agent 已重新加载");
+    new Notice("File Copilot 已重新加载");
   }
 
   onunload(): void {
@@ -140,7 +140,7 @@ export default class CopilotPlugin extends Plugin {
       try {
         listener();
       } catch (error) {
-        console.warn("Copilot CN Agent settings listener failed", error);
+        console.warn("File Copilot settings listener failed", error);
       }
     }
   }

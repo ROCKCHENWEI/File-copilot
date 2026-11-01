@@ -6,7 +6,7 @@
 [![Obsidian](https://img.shields.io/badge/Obsidian-1.5.0+-7C3AED.svg)](https://obsidian.md)
 [![Models](https://img.shields.io/badge/Models-MiniMax%20%7C%20Kimi%20%7C%20GLM-blueviolet)](#支持的模型与服务商)
 
-**Copilot CN** 是一个 Obsidian 社区插件，把国内主流大模型（MiniMax、Kimi、GLM/智谱）装进 Obsidian 右侧栏。不用切换窗口、不用复制粘贴，直接在笔记旁边对话——总结、润色、生成大纲、就着当前笔记提问。
+**File-copilot** 是一个 Obsidian 社区插件，把国内主流大模型（MiniMax、Kimi、GLM/智谱）装进 Obsidian 右侧栏。不用切换窗口、不用复制粘贴，直接在笔记旁边对话——总结、润色、生成大纲、就着当前笔记提问。
 
 - 🇨🇳 **面向中文用户**：默认中文、中文系统提示词、中文界面。
 - 🔌 **三家服务商、一个界面**：MiniMax / Kimi / GLM，OpenAI 兼容协议，模型随时切换。
@@ -34,7 +34,7 @@
 
 ## 产品介绍
 
-在 Obsidian 里写笔记时，常常需要 AI 帮忙：把一段草稿润色成正式文、把零散要点扩成大纲、解释一段代码、就着当前笔记问个问题。Copilot CN 把这件事留在了 Obsidian 内部——点一下左侧栏的机器人图标，右侧就弹出对话面板，选好服务商和模型，直接开聊。
+在 Obsidian 里写笔记时，常常需要 AI 帮忙：把一段草稿润色成正式文、把零散要点扩成大纲、解释一段代码、就着当前笔记问个问题。File Copilot 把这件事留在了 Obsidian 内部——点一下左侧栏的机器人图标，右侧就弹出对话面板，选好服务商和模型，直接开聊。
 
 它不绑定某一家模型：MiniMax、Kimi、GLM（智谱）三家随时可切，谁的回答好就用谁。所有交互都通过各家官方的 OpenAI 兼容接口完成，不经过任何第三方中转。
 
@@ -55,7 +55,7 @@
 | 流式输出 | 逐字显示模型回复（可在设置中关闭） |
 | Markdown 渲染 | 代码块（带复制）、表格、引用、链接自动在新标签打开 |
 | 附带当前笔记 | 可选：发送时自动把当前活动笔记的正文摘录随问题一起发给模型 |
-| 选中文本提问 | 选中笔记里的文字 → 命令「将选中文本添加到 Copilot CN 对话」→ 直接带入输入框 |
+| 选中文本提问 | 选中笔记里的文字 → 命令「将选中文本添加到 Agent 对话」→ 直接带入输入框 |
 | 对话历史 | 一键「明文保存对话」为 JSON，或「导出 Markdown」到 vault 指定目录 |
 | Obsidian 原生 UI | 全部颜色 / 字号 / 圆角走 Obsidian 主题变量，明暗主题自适应 |
 | 隐私默认 | API Key 默认仅会话内有效、不写盘；对话默认不自动保存 |
@@ -82,7 +82,7 @@
 （插件提交并通过 Obsidian 审核后可用）
 
 1. Obsidian → **设置 → 社区插件 → 浏览**。
-2. 搜索 **“Copilot CN”**。
+2. 搜索 **“File-copilot”**。
 3. 点击安装 → 启用。
 
 ### 方式二：BRAT（推荐，上架前最方便）
@@ -91,8 +91,8 @@
 
 1. 先在 Obsidian 社区插件市场安装并启用 **BRAT**。
 2. 打开 BRAT 设置 → **Add Beta plugin**。
-3. 填入仓库地址：`ROCKCHENWEI/Copilot-CN-Agent`（替换为你的实际地址）。
-4. 点击 **Add Plugin** → 回到 **设置 → 社区插件** 启用 **Copilot CN**。
+3. 填入仓库地址：`ROCKCHENWEI/File-copilot`（替换为你的实际地址）。
+4. 点击 **Add Plugin** → 回到 **设置 → 社区插件** 启用 **File-copilot**。
 
 ### 方式三：手动安装
 
@@ -108,13 +108,13 @@
 <vault>/.obsidian/plugins/copilot-cn/
 ```
 
-然后 Obsidian → **设置 → 社区插件** → 关闭「安全模式」（如未关）→ 找到 **Copilot CN** → 启用。
+然后 Obsidian → **设置 → 社区插件** → 关闭「安全模式」（如未关）→ 找到 **File-copilot** → 启用。
 
 ---
 
 ## 配置
 
-启用插件后：**设置 → Copilot CN**。
+启用插件后：**设置 → File Copilot**。
 
 1. **API Key**：在「API Key 配置」里填入你使用的服务商 Key（MiniMax / Kimi / GLM 各一个输入框，密码型）。
    - 默认 Key **不会写入本地**，重启 Obsidian 后需要重新输入。
@@ -123,17 +123,17 @@
 3. **聊天参数**：温度、最大输出 Token、是否流式输出、系统提示词等。
 4. **附带当前活动笔记**：开启后，每次发送会自动把当前活动笔记的正文摘录附在问题后（摘录长度可设上限）。
 5. **Agent 工具与权限**：开关「启用笔记库工具」；选择写入权限档位（只读 / 每次确认 / 自动写入）；设置最大工具轮数（默认 6）与 `read_note` 截断上限。
-6. **Vault 存储路径**：对话 JSON 与导出 Markdown 的存放目录（相对库根，默认 `copilot-agent/conversations` 与 `copilot-agent/exports`）。
+6. **Vault 存储路径**：对话 JSON 与导出 Markdown 的存放目录（相对库根，默认 `file-copilot/conversations` 与 `file-copilot/exports`）。
 7. **测试连接**：每个服务商 Key 旁有「测试连接」按钮，用最小请求验证 Key 与模型是否可用。
 
 > 🔄 **从旧版 Copilot CN (v0.1.x) 升级**：插件 id 为 `copilot-agent-cn`，可与旧版并存。首次启用时若本插件尚无数据，会自动从旧版 `copilot-cn/data.json` 导入设置与 API Key（只读旧数据）；也可在设置底部「从旧版 Copilot CN 导入配置」手动重导。
 
 ## 使用
 
-- **打开侧边栏**：点左侧栏的 **机器人图标**，或命令面板（`Ctrl/Cmd + P`）搜 **“打开 Copilot CN 侧边栏”**。面板出现在右侧栏。
+- **打开侧边栏**：点左侧栏的 **机器人图标**，或命令面板（`Ctrl/Cmd + P`）搜 **“打开 File Copilot 侧边栏”**。面板出现在右侧栏。
 - **切换模型**：点页头下方的 **模型栏**（显示「服务商 · 模型」）→ 展开下拉，选择服务商与模型。
 - **发送消息**：在底部输入框输入 → `Enter` 发送、`Shift + Enter` 换行；生成中可点 **停止**。
-- **就着笔记提问**：在笔记中选中一段文字 → 命令面板搜 **“将选中文本添加到 Copilot CN 对话”** → 文本自动带入输入框（可继续补充问题后发送）。若开启了「附带当前活动笔记」，发送时还会附上整篇笔记的摘录。
+- **就着笔记提问**：在笔记中选中一段文字 → 命令面板搜 **“将选中文本添加到 Agent 对话”** → 文本自动带入输入框（可继续补充问题后发送）。若开启了「附带当前活动笔记」，发送时还会附上整篇笔记的摘录。
 - **最近对话**：页头 **时钟图标** → 展开最近对话列表，点击即可载入。
 - **更多操作**：页头 **⋮ 图标** → 「明文保存对话」/「导出 Markdown」/ 新对话也可用 **+ 图标**。
 - **复制**：每条消息悬停显示 **复制** 图标；代码块右上角有 **复制代码**。
@@ -164,7 +164,7 @@
 ## 开发者 / 从源码构建
 
 ```bash
-git clone https://github.com/ROCKCHENWEI/Copilot-CN-Agent.git
+git clone https://github.com/ROCKCHENWEI/File-copilot.git
 cd obsidian-copilot-cn
 npm install          # 安装依赖
 npm run dev          # esbuild watch：改源码自动重建 main.js
@@ -196,7 +196,7 @@ ln -sf "$PWD/manifest.json" <vault>/.obsidian/plugins/copilot-cn/manifest.json
 
 1. **发布前核对**（均已填好，再确认一次即可）：
    - [`manifest.json`](manifest.json) 的 `author` / `authorUrl`。
-   - 仓库地址：`ROCKCHENWEI/Copilot-CN-Agent`。
+   - 仓库地址：`ROCKCHENWEI/File-copilot`。
    - [`LICENSE`](LICENSE) 版权署名。
 2. **确认 `manifest.json` 的 `version`**（如 `0.1.1`）与 [`versions.json`](versions.json) 中的映射一致。
 3. **打 tag 并推送**：`git tag 0.1.1 && git push origin 0.1.1`。

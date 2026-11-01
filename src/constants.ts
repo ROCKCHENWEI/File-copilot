@@ -3,8 +3,8 @@ import type { CopilotSettings, ProviderDefinition } from "@/types";
 export const PLUGIN_ID = "copilot-agent-cn";
 export const PLUGIN_NAME = "File-copilot";
 export const VIEW_TYPE_COPILOT = "copilot-agent-cn-view";
-export const CONVERSATION_FOLDER = "copilot-agent/conversations";
-export const EXPORT_MARKDOWN_FOLDER = "copilot-agent/exports";
+export const CONVERSATION_FOLDER = "file-copilot/conversations";
+export const EXPORT_MARKDOWN_FOLDER = "file-copilot/exports";
 export const DEFAULT_CONVERSATION_TITLE = "未命名对话";
 /** 旧版插件目录：首次启动时从中导入设置与 API Key。 */
 export const LEGACY_PLUGIN_ID = "copilot-cn";

@@ -322,7 +322,7 @@ export class ChatService {
       // open.bigmodel.cn 的 /chat/completions）。此时改走 Obsidian requestUrl
       // （主进程发起，不受 CORS 限制）。仅在尚未输出任何内容时降级，避免重复输出。
       if (error instanceof TypeError && !emitted) {
-        console.warn(`[Copilot CN Agent] fetch 被拦截（${error.message}），改用 requestUrl 重试`);
+        console.warn(`[File Copilot] fetch 被拦截（${error.message}），改用 requestUrl 重试`);
         return this.completeViaRequestUrl(options, payload);
       }
 

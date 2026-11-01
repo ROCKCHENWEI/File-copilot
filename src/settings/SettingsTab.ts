@@ -24,7 +24,7 @@ export class CopilotSettingTab extends PluginSettingTab {
     const { containerEl } = this;
     containerEl.empty();
 
-    containerEl.createEl("h2", { text: "Copilot CN Agent 设置（MiniMax/Kimi/GLM）" });
+    containerEl.createEl("h2", { text: "File Copilot 设置（MiniMax/Kimi/GLM）" });
 
     containerEl.createEl("p", {
       text: "Obsidian 内的工作 Agent 助理：对话之外可检索、读取、创建与整理笔记。配置服务商 API Key 与 Agent 权限。",
@@ -379,7 +379,7 @@ export class CopilotSettingTab extends PluginSettingTab {
       });
 
     new Setting(containerEl)
-      .setName("从旧版 Copilot CN 导入配置")
+      .setName("从旧版 Copilot CN（旧插件）导入配置")
       .setDesc("读取旧插件（copilot-cn）的 data.json，覆盖当前设置与 API Key（只读旧数据，不会修改旧插件）。")
       .addButton((button) => {
         button.setButtonText("导入").onClick(async () => {
