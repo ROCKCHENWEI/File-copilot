@@ -1,7 +1,7 @@
 {
   "id": "copilot-agent-cn",
-  "name": "Copilot CN Agent (MiniMax/Kimi/GLM)",
-  "version": "0.2.1",
+  "name": "File-copilot",
+  "version": "0.2.2",
   "minAppVersion": "1.5.0",
   "description": "Obsidian 内的工作 Agent 助理：对话 + 笔记检索/读写工具（MiniMax / Kimi / GLM）。",
   "author": "ROCKCHENWEI",

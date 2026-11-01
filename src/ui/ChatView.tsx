@@ -155,7 +155,7 @@ export function ChatView({ plugin }: ChatViewProps): React.JSX.Element {
           <span className="copilot-header-logo" aria-hidden>
             <BotIcon size={16} />
           </span>
-          <span className="copilot-header-title">Copilot CN</span>
+          <span className="copilot-header-title">File Copilot</span>
           <span className="copilot-header-badge">Agent</span>
         </div>
         <div className="copilot-header-actions">

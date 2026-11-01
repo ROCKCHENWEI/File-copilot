@@ -1,7 +1,7 @@
 import type { CopilotSettings, ProviderDefinition } from "@/types";
 
 export const PLUGIN_ID = "copilot-agent-cn";
-export const PLUGIN_NAME = "Copilot CN Agent (MiniMax/Kimi/GLM)";
+export const PLUGIN_NAME = "File-copilot";
 export const VIEW_TYPE_COPILOT = "copilot-agent-cn-view";
 export const CONVERSATION_FOLDER = "copilot-agent/conversations";
 export const EXPORT_MARKDOWN_FOLDER = "copilot-agent/exports";
