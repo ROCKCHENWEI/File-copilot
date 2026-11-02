@@ -1,4 +1,4 @@
-import { DEFAULT_SETTINGS, PLUGIN_ID, PLUGIN_NAME, VIEW_TYPE_COPILOT } from "@/constants";
+import { DEFAULT_SETTINGS, PLUGIN_NAME, VIEW_TYPE_COPILOT } from "@/constants";
 import { CopilotSettingTab } from "@/settings/SettingsTab";
 import { importLegacySettings } from "@/settings/migrate";
 import { loadPluginSettings, persistPluginSettings, sanitizeSettings } from "@/settings/model";
@@ -101,31 +101,7 @@ export default class CopilotPlugin extends Plugin {
       },
     });
 
-    this.addCommand({
-      id: "reload-plugin",
-      name: "重启插件（加载最新代码）",
-      callback: () => {
-        void this.reloadSelf();
-      },
-    });
-
     this.addSettingTab(new CopilotSettingTab(this.app, this));
-  }
-
-  /** 开发/升级后自重启：磁盘上的 main.js 替换后需重载才会生效。 */
-  private async reloadSelf(): Promise<void> {
-    const plugins = (
-      this.app as unknown as {
-        plugins: {
-          disablePlugin: (id: string) => Promise<void>;
-          enablePlugin: (id: string) => Promise<void>;
-        };
-      }
-    ).plugins;
-
-    await plugins.disablePlugin(PLUGIN_ID);
-    await plugins.enablePlugin(PLUGIN_ID);
-    new Notice("File Copilot 已重新加载");
   }
 
   onunload(): void {

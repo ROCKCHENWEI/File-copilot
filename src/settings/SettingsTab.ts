@@ -24,11 +24,10 @@ export class CopilotSettingTab extends PluginSettingTab {
     const { containerEl } = this;
     containerEl.empty();
 
-    containerEl.createEl("h2", { text: "File Copilot 设置（MiniMax/Kimi/GLM）" });
-
-    containerEl.createEl("p", {
-      text: "Obsidian 内的工作 Agent 助理：对话之外可检索、读取、创建与整理笔记。配置服务商 API Key 与 Agent 权限。",
-    });
+    new Setting(containerEl)
+      .setName("File Copilot 设置（MiniMax/Kimi/GLM）")
+      .setDesc("Obsidian 内的工作 Agent 助理：对话之外可检索、读取、创建与整理笔记。配置服务商 API Key 与 Agent 权限。")
+      .setHeading();
 
     this.renderSecuritySettings();
     this.renderApiKeySettings();
@@ -50,10 +49,7 @@ export class CopilotSettingTab extends PluginSettingTab {
   private renderSecuritySettings(): void {
     const { containerEl } = this;
 
-    containerEl.createEl("h3", { text: "安全与隐私" });
-    containerEl.createEl("p", {
-      text: "默认情况下，API Key 仅保留在当前会话内，不会写入本地插件数据；自动保存对话默认关闭，避免把聊天内容以 JSON 明文写入 vault。",
-    });
+    new Setting(containerEl).setName("安全与隐私").setDesc("默认情况下，API Key 仅保留在当前会话内，不会写入本地插件数据；自动保存对话默认关闭，避免把聊天内容以 JSON 明文写入 vault。").setHeading();
 
     new Setting(containerEl)
       .setName("本地保存 API Key（明文）")
@@ -78,7 +74,7 @@ export class CopilotSettingTab extends PluginSettingTab {
   private renderApiKeySettings(): void {
     const { containerEl } = this;
 
-    containerEl.createEl("h3", { text: "API Key 配置" });
+    new Setting(containerEl).setName("API Key 配置").setHeading();
 
     for (const provider of PROVIDERS) {
       const setting = new Setting(containerEl)
@@ -137,10 +133,7 @@ export class CopilotSettingTab extends PluginSettingTab {
   private renderAgentSettings(): void {
     const { containerEl } = this;
 
-    containerEl.createEl("h3", { text: "Agent 工具与权限" });
-    containerEl.createEl("p", {
-      text: "开启后，模型可调用工具检索/读取/写入笔记库。写入类操作受下方权限档位约束。",
-    });
+    new Setting(containerEl).setName("Agent 工具与权限").setDesc("开启后，模型可调用工具检索/读取/写入笔记库。写入类操作受下方权限档位约束。").setHeading();
 
     new Setting(containerEl)
       .setName("启用笔记库工具")
@@ -204,7 +197,7 @@ export class CopilotSettingTab extends PluginSettingTab {
   private renderModelSettings(): void {
     const { containerEl } = this;
 
-    containerEl.createEl("h3", { text: "默认模型" });
+    new Setting(containerEl).setName("默认模型").setHeading();
 
     new Setting(containerEl)
       .setName("默认服务商")
@@ -240,7 +233,7 @@ export class CopilotSettingTab extends PluginSettingTab {
   private renderBehaviorSettings(): void {
     const { containerEl } = this;
 
-    containerEl.createEl("h3", { text: "聊天参数" });
+    new Setting(containerEl).setName("聊天参数").setHeading();
 
     new Setting(containerEl)
       .setName("温度")
@@ -349,10 +342,7 @@ export class CopilotSettingTab extends PluginSettingTab {
   private renderVaultPathsSettings(): void {
     const { containerEl } = this;
 
-    containerEl.createEl("h3", { text: "Vault 存储路径与数据" });
-    containerEl.createEl("p", {
-      text: "相对于库根目录的文件夹路径，勿以 / 开头；禁止包含 ..。非法值会自动回退为默认值。",
-    });
+    new Setting(containerEl).setName("Vault 存储路径与数据").setDesc("相对于库根目录的文件夹路径，勿以 / 开头；禁止包含 ..。非法值会自动回退为默认值。").setHeading();
 
     new Setting(containerEl)
       .setName("对话 JSON 目录")
