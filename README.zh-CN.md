@@ -201,7 +201,7 @@ ln -sf "$PWD/manifest.json" <vault>/.obsidian/plugins/copilot-cn/manifest.json
    - 仓库地址：`ROCKCHENWEI/File-copilot`。
    - [`LICENSE`](LICENSE) 版权署名。
 2. **确认 `manifest.json` 的 `version`**（如 `0.1.1`）与 [`versions.json`](versions.json) 中的映射一致。
-3. **打 tag 并推送**：`git tag 0.1.1 && git push origin 0.1.1`。
+3. **打 tag 并推送（⚠️ 不带 `v` 前缀）**：`git tag 0.2.4 && git push origin 0.2.4`——社区目录门户要求 release tag 与 manifest `version` 完全一致且**不能有 `v` 前缀**，否则报 "No release matches your manifest version"。
 4. GitHub Actions（[`.github/workflows/release.yml`](.github/workflows/release.yml)）会自动 `npm ci && npm run build`，并把 `main.js`、`manifest.json`、`styles.css` 附到该 tag 的 Release 上——这正是 BRAT 与 Obsidian 市场所需的产物。
 5. **提交到社区市场**：按 [Obsidian 插件提交指南](https://docs.obsidian.md/Plugins/Releasing/Submit+a+plugin) 向 [`obsidianmd/obsidian-releases`](https://github.com/obsidianmd/obsidian-releases) 提 PR，等待审核。
 
